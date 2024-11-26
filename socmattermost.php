@@ -104,7 +104,7 @@ class SOCMattermostPlugin extends Plugin {
      * @return string|null Severity level or null.
      */
     private function extractSeverityFromBody($body) {
-        if (preg_match('/Severity:\s*(Critical|High|Medium|Low)/i', $body, $matches)) {
+        if (preg_match('/Severity\s*:\s*(Critical|High|Medium|Low)/i', $body, $matches)) {
             $severity = strtolower($matches[1]);
             $this->log('DEBUG', "Extracted severity: $severity");
             return $severity;
